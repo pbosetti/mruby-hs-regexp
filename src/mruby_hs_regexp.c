@@ -226,11 +226,11 @@ mrb_mruby_hs_regexp_gem_init(mrb_state* mrb)
     mrb_define_const(mrb, r, "IGNORECASE", mrb_fixnum_value(REGEXP_FLAG_IGNORECASE));
     mrb_define_const(mrb, r, "MULTILINE", mrb_fixnum_value(REGEXP_FLAG_MULTILINE));
 
-    mrb_define_method(mrb, r, "initialize", hs_regexp_initialize, ARGS_ANY());
-    mrb_define_method(mrb, r, "initialize_copy", hs_regexp_initialize_copy, ARGS_REQ(1));
-    mrb_define_method(mrb, r, "match", hs_regexp_match, ARGS_REQ(1));
-    mrb_define_method(mrb, r, "==", hs_regexp_equal, ARGS_REQ(1));
-    mrb_define_method(mrb, r, "casefold?", hs_regexp_casefold_p, ARGS_NONE());
+    mrb_define_method(mrb, r, "initialize", hs_regexp_initialize, MRB_ARGS_ANY());
+    mrb_define_method(mrb, r, "initialize_copy", hs_regexp_initialize_copy, MRB_ARGS_REQ(1));
+    mrb_define_method(mrb, r, "match", hs_regexp_match, MRB_ARGS_REQ(1));
+    mrb_define_method(mrb, r, "==", hs_regexp_equal, MRB_ARGS_REQ(1));
+    mrb_define_method(mrb, r, "casefold?", hs_regexp_casefold_p, MRB_ARGS_NONE());
 
 #ifdef HS_REGEXP_ENABLE_BUILT_IN_REGEXP
     mrb_define_global_const(mrb, "Regexp", mrb_obj_value(r));
