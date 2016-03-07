@@ -209,7 +209,7 @@ hs_regexp_casefold_p(mrb_state *mrb, mrb_value self)
 }
 
 ////////////////////////////////////////////////////////////////
-void regerror(regexp_info *ri, char *message)
+void regerror(regexp_info *ri, const char *message)
 {
     ri->error_msg = message;
 }

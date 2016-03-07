@@ -28,4 +28,4 @@ typedef struct regexp_info {
 extern regexp *regcomp(regexp_info *ri, const char *re);
 extern int regexec(regexp_info *ri, regexp *rp, const char *s);
 extern void regsub(regexp_info *ri, const regexp *rp, const char *src, char *dst);
-extern void regerror(regexp_info *ri, char *message);
+extern void regerror(regexp_info *ri, const char *message);
